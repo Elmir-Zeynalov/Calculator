@@ -4,3 +4,7 @@
     box-sizing: border-box; 
 }
 
+.number{
+    flex : 1 0 33%;
+}
+

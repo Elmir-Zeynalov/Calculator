@@ -54,8 +54,11 @@ function createCalculatorSkeleton(){
     const number_section = document.createElement('div');
     number_section.setAttribute('class', 'number-section');
     number_section.style.border = 'solid pink';
+    number_section.style.display = 'flex';
+    number_section.style.flexFlow = 'row wrap';
+    
+ 
     number_section.style.flex = '3';
-
 
     const operations_section = document.createElement('div');
     operations_section.setAttribute('class', 'operations-section');
@@ -67,14 +70,31 @@ function createCalculatorSkeleton(){
 
     calculator_body[0].appendChild(display_section);
     calculator_body[0].appendChild(number_and_operations_container);
+}
 
+function displayNumbers(){
+    const number_section = document.getElementsByClassName('number-section');
+    for(let i = 0; i < 10 ; i++) number_section[0].appendChild(createNumberBlock(i));
+
+
+
+}
+
+function createNumberBlock(number){
+    const n = document.createElement('div');
+    n.setAttribute('id', 'number' + '-' + number);
+    n.setAttribute('class', 'number');
+    n.style.border = 'solid gray'
+    n.textContent = number;
+    return n;
 }
 
 
 setPageTitle();
 createFrame();
 createCalculator();
-createCalculatorSkeleton()
+createCalculatorSkeleton();
+displayNumbers();
 
 
 
