@@ -47,16 +47,20 @@ function createCalculatorSkeleton(){
     const number_and_operations_container = document.createElement('div');
     number_and_operations_container.setAttribute('class', 'number_and_operations_container');
     number_and_operations_container.style.border = 'solid green';
+    number_and_operations_container.style.display = 'flex';
+    //number_and_operations_container.style.flexDirection = 'column';
     number_and_operations_container.style.flex = '8';
     
     const number_section = document.createElement('div');
     number_section.setAttribute('class', 'number-section');
     number_section.style.border = 'solid pink';
+    number_section.style.flex = '3';
 
 
     const operations_section = document.createElement('div');
     operations_section.setAttribute('class', 'operations-section');
     operations_section.style.border = 'solid yellow';
+    operations_section.style.flex = '1';
 
     number_and_operations_container.appendChild(number_section);
     number_and_operations_container.appendChild(operations_section);
